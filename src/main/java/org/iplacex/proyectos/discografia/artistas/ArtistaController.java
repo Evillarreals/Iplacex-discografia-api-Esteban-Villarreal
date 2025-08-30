@@ -81,7 +81,9 @@ public class ArtistaController {
         return new ResponseEntity<>(temp, null, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/artista/{id}")
+    @DeleteMapping(
+        value = "/artista/{id}",
+        produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Artista> HandleDeleteArtistRequest(@PathVariable("id") String id){
         if(!artistaRepo.existsById(id)){
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);

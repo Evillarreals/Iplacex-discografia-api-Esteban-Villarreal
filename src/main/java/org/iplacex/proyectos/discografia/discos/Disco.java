@@ -1,17 +1,17 @@
-package org.iplacex.proyectos.discografia.artistas;
+package org.iplacex.proyectos.discografia.discos;
 
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("artistas")
-public class Artista {
+@Document("discos")
+public class Disco {
     
     @Id
     public String _id;
+    public String idArtista;
     public String nombre;
-    public List<String> estilos;
-    public int anioFundacion;
-    public boolean estaActivo;
+    public int anioLanzamiento;
+    public List<String> canciones;
 }
